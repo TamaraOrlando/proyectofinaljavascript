@@ -1,0 +1,82 @@
+[
+    {
+        "id": "clones-01",
+        "titulo": "DON JUAN RESERVE",
+        "imagen": "./img/djreserve.png.png",
+        "categoria": {
+            "nombre": "Clones",
+            "id": "clones"
+        },
+        "precio": 8000
+    },
+    {
+        "id": "iceline-01",
+        "titulo": "PEACH",
+        "imagen": "./img/peach.png.png",
+        "categoria": {
+            "nombre": "Iceline",
+            "id": "iceline"
+        },
+        "precio": 8000
+    },
+    {
+        "id": "iceline-02",
+        "titulo": "PINEAPPLE",
+        "imagen": "./img/pineapple.png.png",
+        "categoria": {
+            "nombre": "Iceline",
+            "id": "iceline"
+        },
+        "precio": 8000
+    },
+    {
+        "id": "tabaquiles-01",
+        "titulo": "SWEET TOBACCO",
+        "imagen": "./img/sweettobaco.png.png",
+        "categoria": {
+            "nombre": "Tabaquiles",
+            "id": "tabaquiles"
+        },
+        "precio": 8000
+    },
+    {
+        "id": "tabaquiles-02",
+        "titulo": "TOBACCO COFFEE",
+        "imagen": "./img/tobaccocoffee.png.png",
+        "categoria": {
+            "nombre": "Tabaquiles",
+            "id": "tabaquiles"
+        },
+        "precio": 8000
+    },
+    {
+        "id": "clones-02",
+        "titulo": "TRIBECA",
+        "imagen": "./img/tribeca.png.png",
+        "categoria": {
+            "nombre": "Clones",
+            "id": "clones"
+        },
+        "precio": 8000
+    },
+    {
+        "id": "clones-03",
+        "titulo": "UNICORN MILK",
+        "imagen": "./img/unicornmilk.png.png",
+        "categoria": {
+            "nombre": "Clones",
+            "id": "clones"
+        },
+        "precio": 8000
+    },
+    {
+        "id": "clones-04",
+        "titulo": "USA MIX",
+        "imagen": "./img/usamix.png.png",
+        "categoria": {
+            "nombre": "Clones",
+            "id": "clones"
+        },
+        "precio": 8000
+    }
+]
