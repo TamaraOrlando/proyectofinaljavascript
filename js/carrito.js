@@ -33,7 +33,7 @@ function cargarProductosCarrito() {
                 <img class="carrito-producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
                 <div class="carrito-producto-titulo">
                     <small>Título</small>
-                    <h2>${producto.titulo}</h2>
+                    <h2 class="carrito-producto-titgrande">${producto.titulo}</h2>
                 </div>
                 <div class="carrito-producto-cantidad">
                     <small>Cantidad</small>
@@ -94,35 +94,42 @@ function actualizarBotonesEliminar() {
 
 function eliminarDelCarrito(e) {
 
-    Toastify({
-        text: "Producto eliminado del carrito",
-        duration: 3000,
-        close: true,
-        gravity: "top", 
-        position: "right", 
-        stopOnFocus: true, 
-        style: {
-            background: "#222",
-            borderRadius: "1rem",
-            textTransform: "uppercase",
-            fontSize: "1.5rem"
-        },
-        offset: {
-            x: '2rem', 
-            y: '5rem' 
-        },
-        onClick: function () { } 
-    }).showToast();
-
     const idBoton = e.currentTarget.id;
-    const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+    const producto = productosEnCarrito.find(producto => producto.id === idBoton);
 
-    productosEnCarrito.splice(index, 1);
-    cargarProductosCarrito();
 
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-    actualizarNumerito();
+    Swal.fire({
+        title: '¿Estás seguro/a que deseas eliminar este producto del carrito?',
+        text: `Se van a eliminar ${producto.cantidad} productos del carrito.`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#000",
+        cancelButtonColor: "rgba(34, 34, 34, 0.9)",
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "Cancelar",
+
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "¡Productos eliminados!",
+                text: `Se eliminaron ${producto.cantidad} productos del carrito con éxito.`,
+                icon: "success",
+                confirmButtonColor: "#000"
+            });
+
+            const index = productosEnCarrito.findIndex(prod => prod.id === idBoton);
+
+            productosEnCarrito.splice(index, 1);
+            cargarProductosCarrito();
+
+            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+            actualizarNumerito();
+
+        }
+    });
 }
+
+
 
 botonVaciar.addEventListener("click", vaciarCarrito);
 function vaciarCarrito() {
@@ -137,7 +144,7 @@ function vaciarCarrito() {
         cancelButtonColor: "rgba(34, 34, 34, 0.9)",
         confirmButtonText: "Eliminar",
         cancelButtonText: "Cancelar",
-        
+
     }).then((result) => {
         if (result.isConfirmed) {
             Swal.fire({
@@ -187,9 +194,9 @@ const restarDelCarrito = (producto) => {
             text: "Producto eliminado del carrito",
             duration: 3000,
             close: true,
-            gravity: "top", 
-            position: "right", 
-            stopOnFocus: true, 
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
             style: {
                 background: "#222",
                 borderRadius: "1rem",
@@ -197,10 +204,10 @@ const restarDelCarrito = (producto) => {
                 fontSize: "1.5rem"
             },
             offset: {
-                x: '2rem', 
-                y: '5rem' 
+                x: '2rem',
+                y: '5rem'
             },
-            onClick: function () { } 
+            onClick: function () { }
         }).showToast();
 
 
@@ -219,9 +226,9 @@ const sumarDelCarrito = (producto) => {
         text: "Producto agregado al carrito",
         duration: 3000,
         close: true,
-        gravity: "top", 
-        position: "right", 
-        stopOnFocus: true, 
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
         style: {
             background: "#222",
             borderRadius: "1rem",
@@ -229,10 +236,10 @@ const sumarDelCarrito = (producto) => {
             fontSize: "1.5rem"
         },
         offset: {
-            x: '2rem', 
-            y: '5rem' 
+            x: '2rem',
+            y: '5rem'
         },
-        onClick: function () { } 
+        onClick: function () { }
     }).showToast();
 
     producto.cantidad++;

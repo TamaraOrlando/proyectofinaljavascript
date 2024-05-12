@@ -1,4 +1,3 @@
-
 /* Fuente: Fjalla One */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Kdam+Thmor+Pro&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -31,7 +30,7 @@ header {
     padding-bottom: 0;
 }
 
-.logo{
+.logo {
     max-width: 9rem;
     padding-top: 1.7rem;
 }
@@ -47,24 +46,34 @@ header {
 .li-nav {
     padding-left: 3rem;
     padding-bottom: 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 0.15rem;
     font-weight: 500;
 }
+
+.li-hover {
+    transition: all 0.3s;
+}
+
+.li-hover:hover {
+    color: #707070;
+}
+
 
 a {
     text-decoration: none;
     color: #fff;
 }
 
+/* Menú hamburguesa */
 
-.menu-hamburguesa{
-    /* display: none; */
-background-color: #000000;
-border: none;
-font-size: 2rem;
-color: #fff;
+.menu-hamburguesa {
+    display: none;
+    background-color: #000000;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
 }
 
 .offcanvas-header,
@@ -73,17 +82,31 @@ color: #fff;
 }
 
 
-.ul-hamburguesa{
+.ul-hamburguesa {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     list-style-type: none;
     height: 80%;
-    font-size: 2rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
 }
 
+.offcanvas-header .btn-close {
+    color: #fff;
+}
+
+.offcanvas-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.logo-hamburguesa {
+    max-width: 12rem;
+}
 
 
 /* MAIN */
@@ -98,7 +121,7 @@ color: #fff;
 h1 {
     padding-top: 10rem;
     padding-bottom: 5rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
@@ -111,19 +134,19 @@ h1 {
     gap: 3rem;
 }
 
-.boton-menu{
+.boton-menu {
     background-color: transparent;
     border: 0;
     color: #fff;
-    font-size: 1.19rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.20rem;
     line-height: 1.563;
     transition: all 0.3s;
 }
 
-.boton-menu:hover{
-color: #707070;
+.boton-menu:hover {
+    color: #707070;
 }
 
 .boton-menu.active {
@@ -139,6 +162,8 @@ color: #707070;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     padding-top: 10rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
     padding-bottom: 10rem;
 }
 
@@ -158,21 +183,21 @@ color: #707070;
 }
 
 .producto-titulo {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     letter-spacing: 0.1rem;
 }
 
-.producto-precio{
-    font-size: 1.45rem;
+.producto-precio {
+    font-size: 1.1rem;
 }
 
 .producto-agregar {
     border: 0;
     background-color: #000;
     color: #fff;
-    padding: 0.7rem;
+    padding: 0.5rem;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     border-radius: 1.5rem;
     letter-spacing: 0.1rem;
     cursor: pointer;
@@ -193,8 +218,8 @@ color: #707070;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    width: 70%;
-    
+    width: 60%;
+    padding-bottom: 7rem;
 }
 
 .carrito-vacio,
@@ -211,7 +236,7 @@ color: #707070;
 
 .carrito-producto {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); 
+    grid-template-columns: repeat(8, 1fr);
     align-items: center;
     gap: 1rem;
     background-color: #3434349c;
@@ -233,11 +258,20 @@ color: #707070;
     font-size: 1.2rem;
 }
 
+.carrito-producto-titulo {
+    font-size: 0.7rem;
+    padding-bottom: 0.5rem;
+}
+
+.carrito-producto-titgrande {
+    font-size: 1.3rem;
+}
+
 
 
 .carrito-producto-sumar,
 .carrito-producto-restar,
-.carrito-producto-eliminar{
+.carrito-producto-eliminar {
     background-color: transparent;
     border: 0;
     color: #fff;
@@ -280,6 +314,7 @@ color: #707070;
     display: flex;
     text-transform: uppercase;
     gap: 1rem;
+    padding-top: 1rem;
 }
 
 
@@ -290,55 +325,124 @@ color: #707070;
 
 /* FOOTER */
 
-footer{
+footer {
     margin-top: auto;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     text-align: center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* FOOTER */
-
-.footer {
-    /* background-color: #333; */
-    /* color: #fff; */
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    /* line-height: 1.5; */
-    /* padding: 20px 0; */
-    text-align: center;
 }
 
-/* .footer p {
-    margin: 0;
-} */
+/* MEDIA QUERIES Inicio y Productos */
+
+@media (min-width: 577px) and (max-width: 1200px) {
+    .contenedor-productos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .contenedor-productos {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .contenedor-productos {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media (max-width:767px) {
+    header {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .menu-hamburguesa {
+        display: flex;
+        padding-top: 1.8rem;
+    }
+
+    .logo {
+        padding-top: 1rem;
+    }
+
+    .ul-menu {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .contenedor-productos {
+        padding-top: 6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contenedor-productos {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* MEDIA QUERIES Carrito */
+
+@media (max-width: 950px) {
+    .carrito-producto-imagen {
+        display: none;
+    }
+
+    .carrito-producto {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 800px) {
+    .carrito-producto-precio {
+        display: none;
+    }
+}
+
+@media (min-width:592px) and (max-width: 680px) {
+
+    .carrito-producto-sumar,
+    .carrito-producto-restar,
+    .carrito-producto-eliminar {
+        font-size: 1.1rem;
+    }
+
+    .carrito-producto small,
+    .carrito-producto-cantidad,
+    .carrito-producto-precio,
+    .carrito-producto-subtotal,
+    .carrito-producto-titgrande {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 591px){
+    .carrito-producto-sumar,
+    .carrito-producto-restar,
+    .carrito-producto-eliminar {
+        font-size: 0.9rem;
+    }
+    .carrito-producto small,
+    .carrito-producto-cantidad,
+    .carrito-producto-precio,
+    .carrito-producto-subtotal,
+    .carrito-producto-titgrande {
+        font-size: 0.9rem;
+    }
+}
