@@ -118,13 +118,34 @@ function actualizarNumerito() {
 
 
 
-btnColorMode.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
+// btnColorMode.addEventListener("click", () => {
+//     document.body.classList.toggle("light-mode");
 
-    if (document.body.classList.contains("light-mode")) {
+//     if (document.body.classList.contains("light-mode")) {
+//         btnColorMode.innerText = "🌙";
+//     } else {
+//         btnColorMode.innerText = "☀️";
+//     }
+// })
+
+function toggleColorMode() {
+    document.body.classList.toggle("light-mode");
+    const isLightMode = document.body.classList.contains("light-mode");
+    localStorage.setItem("isLightMode", isLightMode);
+    btnColorMode.innerText = isLightMode ? "🌙" : "☀️";
+}
+
+
+btnColorMode.addEventListener("click", () => {
+    toggleColorMode();
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const isLightMode = localStorage.getItem("isLightMode") === "true";
+    if (isLightMode) {
+        document.body.classList.add("light-mode");
         btnColorMode.innerText = "🌙";
-    } else {
-        btnColorMode.innerText = "☀️";
     }
-})
+});
 

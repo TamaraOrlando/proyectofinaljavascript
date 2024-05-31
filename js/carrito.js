@@ -269,6 +269,18 @@ function actualizarNumerito() {
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const isLightMode = localStorage.getItem("isLightMode") === "true";
+    if (isLightMode) {
+        document.body.classList.add("light-mode");
+    }
+});
+
+
+
+
+
+
 
 
 
