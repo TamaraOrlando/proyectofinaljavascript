@@ -132,6 +132,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 3rem;
+    margin-right: 5rem;
 }
 
 .boton-menu {
@@ -153,6 +154,40 @@ h1 {
     color: #707070;
 }
 
+.btn-colormode {
+    border: 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    /* background-color: rgba(34, 34, 34, 0.9); */
+    background-color: #707070;
+}
+
+.div-main {
+    display: flex;
+
+}
+
+/* Light mode */
+
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+    background-color: #fff;
+    color: #000;
+
+}
+
+body.light-mode a {
+    color: #333; 
+}
+
+body.light-mode .ul-menu .boton-menu {
+    color: #333; 
+}
 
 
 /* PRODUCTOS */
